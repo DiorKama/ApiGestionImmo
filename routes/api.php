@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\ProprieteController;
+use App\Http\Controllers\Api\ProprietaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,9 @@ Route::delete('/deletePropriete/{id}', [ProprieteController::class, 'deletePropr
 Route::get('/showProprietes/{id}', [ProprieteController::class, 'show']);
 Route::get('/recherchePropriete/{nom}', [ProprieteController::class, 'search']);
 
+Route::get('/proprietaires', [ProprietaireController::class, 'index']);
+// Route::post('/ajoutProprietaires', [ProprietaireController::class, 'insertProprietaire']);
+// Route::put('/modifierProprietaires/{id}', [ProprietaireController::class, 'updateProprietaire']);
+// Route::delete('/deleteProprietaire/{id}', [ProprietaireController::class, 'deleteProprietaire']);
+// Route::get('/showProprietaires/{id}', [ProprietaireController::class, 'show']);
+// Route::get('/rechercheProprietaire/{nom}', [ProprietaireController::class, 'search']);

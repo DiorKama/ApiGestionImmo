@@ -26,6 +26,7 @@ class User extends Authenticatable
         'contact1',
         'contact2',
         'photo',
+        'agence_id',
     ];
 
     /**
