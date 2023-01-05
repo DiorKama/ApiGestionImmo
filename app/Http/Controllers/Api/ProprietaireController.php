@@ -39,4 +39,16 @@ class ProprietaireController extends Controller
      $proprietaire->delete();
       return response()->json('Suppression réuissi'); 
     }
+
+    public function show($id)
+       {
+        $proprietaire = Proprietaire::find($id);
+        return response()->json($proprietaire);
+       }
+
+       public function search($nom)
+       {
+           $proprietaire = Proprietaire::where('nom', 'like', '%' . $nom . '%')->get();
+           return response()->json($proprietaire);
+       }
 }
