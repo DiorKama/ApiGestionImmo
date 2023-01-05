@@ -26,4 +26,10 @@ class ProprietaireController extends Controller
         $proprietaire->save();
         return response()->json($proprietaire);
     }
+    public function updateProprietaire(Request $request, $id)
+    {
+       $proprietaire = Proprietaire::findOrFail($id);
+      $proprietaire->update($request->all());
+      return response()->json($proprietaire);
+    }
 }
