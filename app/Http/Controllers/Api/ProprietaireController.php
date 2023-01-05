@@ -32,4 +32,11 @@ class ProprietaireController extends Controller
       $proprietaire->update($request->all());
       return response()->json($proprietaire);
     }
+
+    public function deleteProprietaire($id)
+    {
+     $proprietaire = Proprietaire::find($id);
+     $proprietaire->delete();
+      return response()->json('Suppression réuissi'); 
+    }
 }
