@@ -34,7 +34,7 @@ Route::get('/showProprietes/{id}', [ProprieteController::class, 'show']);
 Route::get('/recherchePropriete/{nom}', [ProprieteController::class, 'search']);
 
 Route::get('/proprietaires', [ProprietaireController::class, 'index']);
-// Route::post('/ajoutProprietaires', [ProprietaireController::class, 'insertProprietaire']);
+Route::post('/ajoutProprietaires', [ProprietaireController::class, 'insertProprietaire']);
 // Route::put('/modifierProprietaires/{id}', [ProprietaireController::class, 'updateProprietaire']);
 // Route::delete('/deleteProprietaire/{id}', [ProprietaireController::class, 'deleteProprietaire']);
 // Route::get('/showProprietaires/{id}', [ProprietaireController::class, 'show']);
