@@ -49,4 +49,9 @@ Route::delete('/deleteTypePro/{id}', [TypeProprieteController::class, 'deleteTyp
 Route::get('/showTypePro/{id}', [TypeProprieteController::class, 'show']);
 
 Route::get('/biens', [BienController::class, 'index']);
+Route::post('/ajoutBiens', [BienController::class, 'insertBien']);
+Route::put('/modifierBiens/{id}', [BienController::class, 'updateBien']);
+Route::delete('/deleteBiens/{id}', [BienController::class, 'deleteBien']);
+Route::get('/showBiens/{id}', [BienController::class, 'show']);
+Route::get('/rechercheBiens/{description}', [BienController::class, 'search']);
 
