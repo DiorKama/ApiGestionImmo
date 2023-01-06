@@ -30,7 +30,7 @@ class RegisterController extends Controller
        if($user_role){
         $user->assignRole($user_role);
        }
-       //send response 
+       //send response
        return new UserRessource($user);
     }
 }

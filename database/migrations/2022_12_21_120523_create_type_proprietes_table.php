@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('magasin')->nullable();
             $table->string('duplex')->nullable();
             $table->string('villa')->nullable();
-            $table->foreignId('propriete_id')->constrained();
+            $table->foreignId('propriete_id')->constrained()->nullable();
             $table->timestamps();
         });
     }
