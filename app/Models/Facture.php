@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Propriete;
+use App\Models\Locataire;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -14,7 +14,7 @@ class Facture extends Model
     protected $guarded = ['id'];
 
   
-    public function proprietes(){
-        return $this->belongsTo(Propriete::class);
+    public function locataires(){
+        return $this->belongsTo(Locataire::class);
         }
 }

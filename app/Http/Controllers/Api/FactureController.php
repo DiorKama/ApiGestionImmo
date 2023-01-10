@@ -21,7 +21,7 @@ class FactureController extends Controller
         $facture->Date = $request->input('Date');
         $facture->etatPayement = $request->input('etatPayement');
         $facture->montant = $request->input('montant');
-        $facture->propriete_id = $request->input('propriete_id');
+        $facture->locataire_id = $request->input('locataire_id');
         $facture->save();
         return response()->json($facture);
     }

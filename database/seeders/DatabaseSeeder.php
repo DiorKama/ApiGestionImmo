@@ -39,14 +39,15 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ProprieteSeeder::class);
         $this->call(ChargeLocativeSeeder::class);
+        $this->call(TypeProprieteSeeder::class);
+        $this->call(BienSeeder::class);
         $this->call(LocataireSeeder::class);
         $this->call(FactureSeeder::class);
-        $this->call(MaintenanceSeeder::class);
-        $this->call(TypeProprieteSeeder::class);
+        $this->call(MaintenanceSeeder::class);  
         $this->call(ReglementSeeder::class);
         $this->call(ContratSeeder::class);
         $this->call(TypeServiceSeeder::class);
         $this->call(FournisseurSeeder::class);
-        $this->call(BienSeeder::class);
+        
     }
 }

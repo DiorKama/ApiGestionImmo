@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('Date');
             $table->boolean('etatPayement');
             $table->integer('montant');
-            $table->foreignId('propriete_id')->constrained();
+            $table->foreignId('locataire_id')->constrained();
             $table->timestamps();
         });
     }

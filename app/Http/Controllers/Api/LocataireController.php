@@ -27,7 +27,7 @@ class LocataireController extends Controller
         $locataire->profession = $request->input('profession');
         $locataire->note = $request->input('note');
         $locataire->nationalite = $request->input('nationalite');
-        $locataire->propriete_id = $request->input('propriete_id');
+        $locataire->bien_id = $request->input('bien_id');
         $locataire->save();
         return response()->json($locataire);
     }

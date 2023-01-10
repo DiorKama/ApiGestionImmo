@@ -26,7 +26,7 @@ class LocataireSeeder extends Seeder
              'profession' =>'Formateur',
              'note' =>'Ecrire une note',
              'nationalite' =>'Senegalaise',
-             'propriete_id' =>1
+             'bien_id' =>1
         ]);
     }
 }

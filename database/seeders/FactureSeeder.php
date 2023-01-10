@@ -20,7 +20,7 @@ class FactureSeeder extends Seeder
           'Date' =>'2022-02-14',
           'etatPayement' =>1,
           'montant' =>150000,
-          'propriete_id' =>1
+          'locataire_id' =>1
         ]);
     }
 }

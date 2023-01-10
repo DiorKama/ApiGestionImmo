@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('profession');
             $table->string('note');
             $table->string('nationalite');
-            $table->foreignId('propriete_id')->constrained();
+            $table->foreignId('bien_id')->constrained()->nullable();
             $table->timestamps();
         });
     }

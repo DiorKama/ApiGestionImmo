@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Facture;
-use App\Models\Locataire;
 use App\Models\Maintenance;
 use App\Models\Proprietaire;
 use App\Models\TypePropriete;
@@ -28,12 +26,6 @@ class Propriete extends Model
         }
     public function chargeLocative(){
         return $this->hasMany(ChargeLocative::class);
-        }
-    public function locataire(){
-        return $this->hasMany(Locataire::class);
-        }
-    public function facture(){
-        return $this->hasMany(Facture::class);
         }
     public function maintenance(){
         return $this->hasMany(Maintenance::class);
