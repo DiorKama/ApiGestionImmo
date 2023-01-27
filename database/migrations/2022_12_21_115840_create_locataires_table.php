@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table locataires
     public function up()
     {
         Schema::create('locataires', function (Blueprint $table) {

@@ -13,6 +13,7 @@ class ProprieteSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Propriete dans la base de données 
     public function run()
     {
         $propriete = Propriete::create([

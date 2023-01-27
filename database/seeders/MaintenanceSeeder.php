@@ -13,6 +13,7 @@ class MaintenanceSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Maintenance dans la base de données 
     public function run()
     {
         $maintenance = Maintenance::create([

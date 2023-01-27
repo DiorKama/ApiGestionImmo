@@ -13,6 +13,7 @@ class FactureSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Facture dans la base de données 
     public function run()
     {
         $facture = Facture::create([

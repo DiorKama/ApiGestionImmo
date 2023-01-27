@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table proprietaire
     public function up()
     {
         Schema::create('proprietaires', function (Blueprint $table) {

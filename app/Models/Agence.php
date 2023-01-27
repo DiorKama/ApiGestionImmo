@@ -13,6 +13,7 @@ class Agence extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
+    // L'ID Agence migre vers la table User
     public function user(){
         return $this->hasMany(User::class);
     }

@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class MaintenanceController extends Controller
 {
+    // fonction pour lister les maintenances
     public function index()
     {
         $maintenance = Maintenance::all();
         return response()->json($maintenance);
     }
 
+    // fonction pour inserer les maintenances
     public function insertMaintenance(Request $request)
     {
         $maintenance = new maintenance();
@@ -26,12 +28,15 @@ class MaintenanceController extends Controller
         return response()->json($maintenance);
     }
 
+    // fonction pour mettre à jour les maintenances
     public function updateMaintenance(Request $request, $id)
     {
        $maintenance = Maintenance::findOrFail($id);
       $maintenance->update($request->all());
       return response()->json($maintenance);
     }
+
+    // fonction pour supprimer les maintenances
     public function deleteMaintenance($id)
     {
      $maintenance = Maintenance::find($id);
@@ -39,6 +44,7 @@ class MaintenanceController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les maintenances
     public function show($id)
     {
      $maintenance = Maintenance::find($id);

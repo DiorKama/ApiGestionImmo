@@ -15,9 +15,11 @@ class Maintenance extends Model
     protected $guarded = ['id'];
 
   
+    // la table maintenance reçoit l'id  de la table propriete
     public function proprietes(){
         return $this->belongsTo(Propriete::class);
         }
+        // L'ID maintenance migre vers la table typeService
     public function typeService(){
         return $this->hasMany(TypeService::class);
         }

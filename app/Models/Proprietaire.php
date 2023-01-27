@@ -13,6 +13,7 @@ class Proprietaire extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
+    // L'ID proprietaire migre vers la table propriete
     public function propriete(){
         return $this->hasMany(Propriete::class);
     }

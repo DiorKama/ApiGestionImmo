@@ -13,6 +13,7 @@ class LocataireSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Locataire dans la base de données 
     public function run()
     {
         $locataire = Locataire::create([

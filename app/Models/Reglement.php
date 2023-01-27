@@ -14,6 +14,7 @@ class Reglement extends Model
     protected $guarded = ['id'];
 
   
+    // la table reglement reçoit l'id  de la table locataire
     public function locataire(){
         return $this->belongsTo(Locataire::class);
         }

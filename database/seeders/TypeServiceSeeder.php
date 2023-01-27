@@ -13,6 +13,7 @@ class TypeServiceSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données typeService dans la base de données 
     public function run()
     {
         $typeService = TypeService::create([

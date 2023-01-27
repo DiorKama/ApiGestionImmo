@@ -33,9 +33,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return new UserRessource($request->user());
 });
 
+// Routes pour la connection
 Route::post('/login',[LoginController::class, 'login']);
 Route::post('/register',[RegisterController::class, 'register']);
 
+// Routes pour  gerer les proprietes
 Route::get('/proprietes', [ProprieteController::class, 'index']);
 Route::post('/ajoutProprietes', [ProprieteController::class, 'insertPropriete']);
 Route::put('/modifierProprietes/{id}', [ProprieteController::class, 'updatePropriete']);
@@ -43,6 +45,7 @@ Route::delete('/deletePropriete/{id}', [ProprieteController::class, 'deletePropr
 Route::get('/showProprietes/{id}', [ProprieteController::class, 'show']);
 Route::get('/recherchePropriete/{nom}', [ProprieteController::class, 'search']);
 
+// Routes pour  gerer les proprietaires
 Route::get('/proprietaires', [ProprietaireController::class, 'index']);
 Route::post('/ajoutProprietaires', [ProprietaireController::class, 'insertProprietaire']);
 Route::put('/modifierProprietaires/{id}', [ProprietaireController::class, 'updateProprietaire']);
@@ -50,12 +53,14 @@ Route::delete('/deleteProprietaire/{id}', [ProprietaireController::class, 'delet
 Route::get('/showProprietaires/{id}', [ProprietaireController::class, 'show']);
 Route::get('/rechercheProprietaire/{nom}', [ProprietaireController::class, 'search']);
 
+// Routes pour  gerer les types de proprietes
 Route::get('/typeProprietes', [TypeProprieteController::class, 'index']);
 Route::post('/ajoutypePropriete', [TypeProprieteController::class, 'insertypePropriete']);
 Route::put('/modifierTyepePro/{id}', [TypeProprieteController::class, 'updateTypePropriete']);
 Route::delete('/deleteTypePro/{id}', [TypeProprieteController::class, 'deleteTypePropriete']);
 Route::get('/showTypePro/{id}', [TypeProprieteController::class, 'show']);
 
+// Routes pour  gerer les biens
 Route::get('/biens', [BienController::class, 'index']);
 Route::post('/ajoutBiens', [BienController::class, 'insertBien']);
 Route::put('/modifierBiens/{id}', [BienController::class, 'updateBien']);
@@ -63,6 +68,7 @@ Route::delete('/deleteBiens/{id}', [BienController::class, 'deleteBien']);
 Route::get('/showBiens/{id}', [BienController::class, 'show']);
 Route::get('/rechercheBiens/{description}', [BienController::class, 'search']);
 
+// Routes pour  gerer les locataires
 Route::get('/locataires', [LocataireController::class, 'index']);
 Route::post('/ajoutLocataires', [LocataireController::class, 'insertLocataire']);
 Route::put('/modifierLocataire/{id}', [LocataireController::class, 'updateLocataire']);
@@ -70,6 +76,7 @@ Route::delete('/deleteLocataire/{id}', [LocataireController::class, 'deleteLocat
 Route::get('/showLocataire/{id}', [LocataireController::class, 'show']);
 Route::get('/rechercheLocataire/{nom}', [LocataireController::class, 'search']);
 
+// Routes pour  gerer les factures
 Route::get('/factures', [FactureController::class, 'index']);
 Route::post('/ajoutFactures', [FactureController::class, 'insertFacture']);
 Route::put('/modifierFactures/{id}', [FactureController::class, 'updateFacture']);
@@ -77,24 +84,28 @@ Route::delete('/deleteFacture/{id}', [FactureController::class, 'deleteFacture']
 Route::get('/showFacture/{id}', [FactureController::class, 'show']);
 Route::get('/rechercheFacture/{numeroFacture}', [FactureController::class, 'search']);
 
+// Routes pour  gerer les maintenances
 Route::get('/maintenances', [MaintenanceController::class, 'index']);
 Route::post('/ajoutMaintenances', [MaintenanceController::class, 'insertMaintenance']);
 Route::put('/modifierMaintenances/{id}', [MaintenanceController::class, 'updateMaintenance']);
 Route::delete('/deleteMaintenance/{id}', [MaintenanceController::class, 'deleteMaintenance']);
 Route::get('/showMaintenance/{id}', [MaintenanceController::class, 'show']);
 
+// Routes pour  gerer les charges Locatives
 Route::get('/charges', [ChargeLocativeController::class, 'index']);
 Route::post('/ajoutCharges', [ChargeLocativeController::class, 'insertCharge']);
 Route::put('/modifierCharges/{id}', [ChargeLocativeController::class, 'updateCharge']);
 Route::delete('/deleteCharges/{id}', [ChargeLocativeController::class, 'deleteCharge']);
 Route::get('/showCharges/{id}', [ChargeLocativeController::class, 'show']);
 
+// Routes pour  gerer les reglements
 Route::get('/reglements', [ReglementController::class, 'index']);
 Route::post('/ajoutReglements', [ReglementController::class, 'insertReglement']);
 Route::put('/modifierReglements/{id}', [ReglementController::class, 'updateReglement']);
 Route::delete('/deleteReglements/{id}', [ReglementController::class, 'deleteReglement']);
 Route::get('/showReglements/{id}', [ReglementController::class, 'show']);
 
+// Routes pour  gerer les contrats
 Route::get('/contrats', [ContratController::class, 'index']);
 Route::post('/ajoutContrat', [ContratController::class, 'insertContrat']);
 Route::put('/modifierContrat/{id}', [ContratController::class, 'updateContrat']);
@@ -102,12 +113,14 @@ Route::delete('/deleteContrat/{id}', [ContratController::class, 'deleteContrat']
 Route::get('/showContrat/{id}', [ContratController::class, 'show']);
 Route::get('/rechercheContrat/{titre_contrat}', [ContratController::class, 'search']);
 
+// Routes pour  gerer les types de services
 Route::get('/services', [TypeServiceController::class, 'index']);
 Route::post('/ajoutServices', [TypeServiceController::class, 'insertService']);
 Route::put('/modifierServices/{id}', [TypeServiceController::class, 'updateService']);
 Route::delete('/deleteServices/{id}', [TypeServiceController::class, 'deleteService']);
 Route::get('/showServices/{id}', [TypeServiceController::class, 'show']);
 
+// Routes pour  gerer les fournisseurs
 Route::get('/fournisseurs', [FournisseurController::class, 'index']);
 Route::post('/ajoutFournisseurs', [FournisseurController::class, 'insertFournisseur']);
 Route::put('/modifierFournisseurs/{id}', [FournisseurController::class, 'updateFournisseur']);

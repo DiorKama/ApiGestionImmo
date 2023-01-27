@@ -17,19 +17,23 @@ class Propriete extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
-  
+  // la table Propriete reçoit l'id  de la table proprietaire
     public function proprietaire(){
     return $this->belongsTo(Proprietaire::class);
     }
+    // la table Propriete reçoit l'id  de la table User
     public function user(){
         return $this->belongsTo(User::class);
         }
+        // L'ID propriete migre vers la table chargeLocative
     public function chargeLocative(){
         return $this->hasMany(ChargeLocative::class);
         }
+        // L'ID propriete migre vers la table maintenance
     public function maintenance(){
         return $this->hasMany(Maintenance::class);
         }
+        // L'ID propriete migre vers la table typePropriete
     public function typePropriete(){
         return $this->hasMany(TypePropriete::class);
         }

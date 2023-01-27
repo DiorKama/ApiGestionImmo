@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table charge_locatives
     public function up()
     {
         Schema::create('charge_locatives', function (Blueprint $table) {

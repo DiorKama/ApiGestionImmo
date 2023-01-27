@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ContratController extends Controller
 {
+    // fonction pour lister les contrats
     public function index()
     {
         $contrat = Contrat::all();
         return response()->json($contrat);
     }
 
+    // fonction pour inserer les contrats
     public function insertContrat(Request $request)
     {
         $contrat = new contrat();
@@ -26,12 +28,15 @@ class ContratController extends Controller
         return response()->json($contrat);
     }
 
+    // fonction pour metre à jour les contrats
     public function updateContrat(Request $request, $id)
     {
        $contrat = Contrat::findOrFail($id);
       $contrat->update($request->all());
       return response()->json($contrat);
     }
+
+    // fonction pour supprimer les contrats
     public function deleteContrat($id)
     {
      $contrat = Contrat::find($id);
@@ -39,12 +44,14 @@ class ContratController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer un contrat par l'Id
     public function show($id)
     {
      $contrat = Contrat::find($id);
      return response()->json($contrat);
     }
 
+    // fonction pour rechercher les contrats
     public function search($titre_contrat)
     {
         $contrat = Contrat::where('titre_contrat', 'like', '%' . $titre_contrat . '%')->get();

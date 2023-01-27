@@ -13,6 +13,7 @@ class ContratSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Contrat dans la base de données 
     public function run()
     {
         $contrat = Contrat::create([

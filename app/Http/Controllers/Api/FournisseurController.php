@@ -8,11 +8,14 @@ use App\Http\Controllers\Controller;
 
 class FournisseurController extends Controller
 {
+    // fonction pour lister les fournisseurs
     public function index()
     {
         $fournisseur = Fournisseur::all();
         return response()->json($fournisseur);
     }
+
+    // fonction pour inserer les fournisseurs
     public function insertFournisseur(Request $request)
     {
         $fournisseur = new fournisseur();
@@ -27,6 +30,8 @@ class FournisseurController extends Controller
         $fournisseur->save();
         return response()->json($fournisseur);
     }
+
+     // fonction pour mettre à jour les fournisseurs
     public function updateFournisseur(Request $request, $id)
     {
        $fournisseur = Fournisseur::findOrFail($id);
@@ -34,6 +39,7 @@ class FournisseurController extends Controller
       return response()->json($fournisseur);
     }
 
+    // fonction pour suprimer les fournisseurs
     public function deleteFournisseur($id)
     {
      $fournisseur = Fournisseur::find($id);
@@ -41,12 +47,14 @@ class FournisseurController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les fournisseurs
     public function show($id)
        {
         $fournisseur = Fournisseur::find($id);
         return response()->json($fournisseur);
        }
 
+        // fonction pour rechercher les fournisseurs
        public function search($nom)
        {
            $fournisseur = Fournisseur::where('nom', 'like', '%' . $nom . '%')->get();

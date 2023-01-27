@@ -14,6 +14,7 @@ class Fournisseur extends Model
     protected $guarded = ['id'];
 
   
+     // la table fournisseur reçoit l'id  de la table typeService
     public function typeService(){
         return $this->belongsTo(TypeService::class);
         }

@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ReglementController extends Controller
 {
+    // fonction pour lister les reglements
     public function index()
     {
         $reglement = Reglement::all();
         return response()->json($reglement);
     }
 
+    // fonction pour inserer les reglements
     public function insertReglement(Request $request)
     {
         $reglement = new reglement();
@@ -24,12 +26,15 @@ class ReglementController extends Controller
         return response()->json($reglement);
     }
 
+    // fonction pour mettre à jour les reglements
     public function updateReglement(Request $request, $id)
     {
        $reglement = Reglement::findOrFail($id);
       $reglement->update($request->all());
       return response()->json($reglement);
     }
+
+    // fonction pour supprimer les reglements
     public function deleteReglement($id)
     {
      $reglement = Reglement::find($id);
@@ -37,6 +42,7 @@ class ReglementController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les reglements
     public function show($id)
     {
      $reglement = Reglement::find($id);

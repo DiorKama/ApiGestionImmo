@@ -13,6 +13,7 @@ class Contrat extends Model
     protected $guarded = ['id'];
 
   
+     // la table contrat reçoit l'id  de la table locataire
     public function locataire(){
         return $this->belongsTo(Locataire::class);
         }

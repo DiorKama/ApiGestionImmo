@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table maintenances
     public function up()
     {
         Schema::create('maintenances', function (Blueprint $table) {

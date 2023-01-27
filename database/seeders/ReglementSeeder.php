@@ -13,6 +13,7 @@ class ReglementSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données  dans reglement la base de données 
     public function run()
     {
         $reglement = Reglement::create([

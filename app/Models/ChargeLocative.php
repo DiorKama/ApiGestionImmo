@@ -13,6 +13,7 @@ class ChargeLocative extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
+     // la table chargeLocative reçoit l'id  de la table proprietes
     public function proprietes(){
         return $this->belongsTo(Propriete::class);
         }

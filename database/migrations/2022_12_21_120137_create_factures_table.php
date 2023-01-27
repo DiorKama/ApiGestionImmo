@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table factures
     public function up()
     {
         Schema::create('factures', function (Blueprint $table) {

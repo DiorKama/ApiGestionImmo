@@ -8,11 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ProprietaireController extends Controller
 {
+    // fonction pour lister les proprietaires
     public function index()
     {
         $proriprietaire = Proprietaire::all();
         return response()->json($proriprietaire);
     }
+
+    // fonction pour inserer les proprietaires
     public function insertProprietaire(Request $request)
     {
         $proprietaire = new proprietaire();
@@ -26,6 +29,8 @@ class ProprietaireController extends Controller
         $proprietaire->save();
         return response()->json($proprietaire);
     }
+
+     // fonction pour mettre à jour les proprietaires
     public function updateProprietaire(Request $request, $id)
     {
        $proprietaire = Proprietaire::findOrFail($id);
@@ -33,6 +38,7 @@ class ProprietaireController extends Controller
       return response()->json($proprietaire);
     }
 
+    // fonction pour supprimer les proprietaires
     public function deleteProprietaire($id)
     {
      $proprietaire = Proprietaire::find($id);
@@ -40,12 +46,14 @@ class ProprietaireController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les proprietaires
     public function show($id)
        {
         $proprietaire = Proprietaire::find($id);
         return response()->json($proprietaire);
        }
 
+        // fonction pour rechercher les proprietaires
        public function search($nom)
        {
            $proprietaire = Proprietaire::where('nom', 'like', '%' . $nom . '%')->get();

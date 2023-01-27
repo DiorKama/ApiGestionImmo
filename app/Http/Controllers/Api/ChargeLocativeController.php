@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ChargeLocativeController extends Controller
 {
+    // fonction pour lister les charges locatives
     public function index()
     {
         $chargeLoc = ChargeLocative::all();
         return response()->json($chargeLoc);
     }
 
+    // fonction pour inserer les charges locatives
     public function insertCharge(Request $request)
     {
         $chargeLoc = new chargeLocative();
@@ -25,12 +27,15 @@ class ChargeLocativeController extends Controller
         return response()->json($chargeLoc);
     }
 
+    // fonction pour mettre à jour les charges locatives
     public function updateCharge(Request $request, $id)
     {
        $chargeLoc = ChargeLocative::findOrFail($id);
       $chargeLoc->update($request->all());
       return response()->json($chargeLoc);
     }
+
+    // fonction pour supprimer les charges locatives
     public function deleteCharge($id)
     {
      $chargeLoc = ChargeLocative::find($id);
@@ -38,6 +43,7 @@ class ChargeLocativeController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les charges locatives
     public function show($id)
     {
      $chargeLoc = ChargeLocative::find($id);

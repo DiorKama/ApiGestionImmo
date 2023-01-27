@@ -13,6 +13,8 @@ class FournisseurSeeder extends Seeder
      *
      * @return void
      */
+
+     // Ajout des données  dans Fournisseur la base de données 
     public function run()
     {
         $founisseur = Fournisseur::create([

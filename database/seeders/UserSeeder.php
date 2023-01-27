@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données Utilisateur dans la base de données 
     public function run()
     {
         $user_list = Permission::create(['name'=>'users.list']);

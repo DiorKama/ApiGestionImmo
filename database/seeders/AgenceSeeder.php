@@ -13,6 +13,7 @@ class AgenceSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données agence dans la base de données 
     public function run()
     {
         $agence = Agence::create([

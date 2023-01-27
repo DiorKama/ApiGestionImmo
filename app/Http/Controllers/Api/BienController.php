@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BienController extends Controller
-{
+{  
+    // fonction pour lister les biens
     public function index()
     {
         $bien = Bien::all();
         return response()->json($bien);
     }
+
+    //fonction qui nous permet d'insérer un bien
 
     public function insertBien(Request $request)
     {
@@ -35,6 +38,8 @@ class BienController extends Controller
         return response()->json($bien);
     }
 
+   //fonction qui nous permet de faire la mise à jour d'un bien
+
     public function updateBien(Request $request, $id)
     {
        $bien = Bien::findOrFail($id);
@@ -42,19 +47,22 @@ class BienController extends Controller
       return response()->json($bien);
     }
 
+    // fonction pour faire la suppression d'un bien
     public function deleteBien($id)
     {
      $bien = Bien::find($id);
      $bien->delete();
       return response()->json('Suppression réuissi'); 
     }
-
+    
+    // fonction pour rechercher un bien à l'aide de l'ID
     public function show($id)
        {
         $bien = Bien::find($id);
         return response()->json($bien);
        }
-
+     
+       // fonction pour rechercher un bien à l'aide du titre
        public function search($description)
        {
            $bien = Bien::where('nom', 'like', '%' . $description . '%')->get();

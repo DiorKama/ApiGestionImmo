@@ -13,6 +13,7 @@ class TypeProprieteSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données typePropriete dans la base de données 
     public function run()
     {
         $typePropriete = TypePropriete::create([

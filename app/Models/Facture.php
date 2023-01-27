@@ -14,6 +14,7 @@ class Facture extends Model
     protected $guarded = ['id'];
 
   
+     // la table facture reçoit l'id  de la table locataire
     public function locataires(){
         return $this->belongsTo(Locataire::class);
         }

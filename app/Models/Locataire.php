@@ -17,16 +17,20 @@ class Locataire extends Model
     protected $guarded = ['id'];
 
   
+    // la table locataire reçoit l'id  de la table biens
     public function biens(){
         return $this->belongsTo(Bien::class);
         }
+     // L'ID locataire migre vers la table reglement   
     public function reglement(){
         return $this->hasMany(Reglement::class);
         }
+        // L'ID locataire migre vers la table contrat
     public function contrat(){
         return $this->hasMany(Contrat::class);
         }
 
+        // L'ID locataire migre vers la table facture
     public function facture(){
         return $this->hasMany(Facture::class);
         }

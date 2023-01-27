@@ -47,9 +47,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // la table User reçoit l'id  de la table Agence
     public function agence(){
         return $this->belongsTo(Agence::class);
         }
+    // L'ID user migre vers la table Propriete
     public function propriete(){
         return $this->hasMany(Propriete::class);
     }

@@ -13,10 +13,11 @@ class TypePropriete extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
-  
+  // la table typePropriete reçoit l'id  de la table propriete
     public function proprietes(){
         return $this->belongsTo(Propriete::class);
         }
+        // L'ID typePropriete migre vers la table biens
     public function bien(){
         return $this->hasMany(Bien::class);
         }

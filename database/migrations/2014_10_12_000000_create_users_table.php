@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table user
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {

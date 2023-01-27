@@ -15,10 +15,12 @@ class Bien extends Model
     protected $guarded = ['id'];
 
   
+     // la table bien reçoit l'id  de la table typePropriete
     public function typePropriete(){
         return $this->belongsTo(TypePropriete::class);
         }
-        
+       
+        // L'ID bien migre vers la table locataire
     public function locataire(){
         return $this->hasMany(Locataire::class);
         }

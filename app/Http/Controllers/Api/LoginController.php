@@ -10,6 +10,7 @@ use App\Http\Resources\UserRessource;
 
 class LoginController extends Controller
 {
+    // fonction pour se connecter
     public function login(LoginRequest  $request)
     {
       

@@ -13,6 +13,7 @@ class BienSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données bien dans la base de données 
     public function run()
     {
         $bien = Bien::create([

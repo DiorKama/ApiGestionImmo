@@ -15,9 +15,11 @@ class TypeService extends Model
     protected $guarded = ['id'];
 
   
+    // la table typeService reçoit l'id  de la table maintenance
     public function maintenance(){
         return $this->belongsTo(Maintenance::class);
         }
+        // L'ID typeService migre vers la table fournisseur
     public function fournisseur(){
         return $this->hasMany(Fournisseur::class);
         }

@@ -11,6 +11,7 @@ use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
+    // fonction pour enregistrer un utilisateur
     public function register(RegisterRequest  $request)
     {
       

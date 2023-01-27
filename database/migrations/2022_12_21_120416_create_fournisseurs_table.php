@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        // Ajout des attributs de la table fournisseurs
         Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');

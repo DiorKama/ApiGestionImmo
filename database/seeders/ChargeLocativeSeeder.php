@@ -13,6 +13,7 @@ class ChargeLocativeSeeder extends Seeder
      *
      * @return void
      */
+    // Ajout des données ChargeLocative dans la base de données 
     public function run()
     {
         $chargeLocative = ChargeLocative::create([

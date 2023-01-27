@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // Ajout des attributs de la table biens
     public function up()
     {
         Schema::create('biens', function (Blueprint $table) {

@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class LocataireController extends Controller
 {
+    // fonction pour lister les locataires
     public function index()
     {
         $locataire = Locataire::all();
         return response()->json($locataire);
     }
 
+    // fonction pour inserer les locataires
     public function insertLocataire(Request $request)
     {
         $locataire = new locataire();
@@ -32,12 +34,15 @@ class LocataireController extends Controller
         return response()->json($locataire);
     }
 
+    // fonction pour mettre à jour les locataires
     public function updateLocataire(Request $request, $id)
     {
        $locataire = Locataire::findOrFail($id);
       $locataire->update($request->all());
       return response()->json($locataire);
     }
+
+     // fonction pour supprimer les locataires
     public function deleteLocataire($id)
     {
      $locataire = Locataire::find($id);
@@ -45,12 +50,14 @@ class LocataireController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+    // fonction pour montrer les locataires
     public function show($id)
     {
      $locataire = Locataire::find($id);
      return response()->json($locataire);
     }
 
+    // fonction pour rechercher les locataires
     public function search($nom)
     {
         $locataire = Locataire::where('nom', 'like', '%' . $nom . '%')->get();

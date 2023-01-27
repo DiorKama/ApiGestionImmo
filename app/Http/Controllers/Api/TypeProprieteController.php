@@ -8,11 +8,14 @@ use App\Http\Controllers\Controller;
 
 class TypeProprieteController extends Controller
 {
+     // fonction pour lister les types de proprietes
     public function index()
     {
         $typePropriete = TypePropriete::all();
         return response()->json($typePropriete);
     }
+
+    // fonction pour inserer les types de proprietes
     public function insertypePropriete(Request $request)
     {
         $typePropriete = new typePropriete();
@@ -26,6 +29,8 @@ class TypeProprieteController extends Controller
         $typePropriete->save();
         return response()->json($typePropriete);
     }
+
+    // fonction pour mettre à jour les types de proprietes
     public function updateTypePropriete(Request $request, $id)
     {
        $typePropriete = TypePropriete::findOrFail($id);
@@ -33,6 +38,7 @@ class TypeProprieteController extends Controller
       return response()->json($typePropriete);
     }
 
+    // fonction pour supprimer les types de proprietes
     public function deleteTypePropriete($id)
     {
      $typePropriete = TypePropriete::find($id);
@@ -40,6 +46,7 @@ class TypeProprieteController extends Controller
       return response()->json('Suppression réuissi'); 
     }
 
+     // fonction pour montrer les types de proprietes
     public function show($id)
        {
         $typePropriete = TypePropriete::find($id);

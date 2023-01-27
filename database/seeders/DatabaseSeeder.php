@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        // Appelle des différents Seeder
         $this->call(AgenceSeeder::class);
         $this->call(ProprietaireSeeder::class);
         $this->call(UserSeeder::class);
